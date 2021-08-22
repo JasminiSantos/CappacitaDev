@@ -12,7 +12,7 @@ function salvarPokemons(pokemon){
 }
 
 function mostrarPokemon(id){
-    return pokemons[id] || {}
+    return pokemons[id-1] || {}
 }
 
 function mostrarPokemons(){
@@ -20,20 +20,20 @@ function mostrarPokemons(){
 }
 
 function curarPokemon(id){
-    pokemons[id].hp += 20;
-    if(pokemons[id].hp > 100){
-        pokemons[id].hp = 100;      
+    pokemons[id-1].hp += 20;
+    if(pokemons[id-1].hp > 100){
+        pokemons[id-1].hp = 100;      
     }
-    return pokemons[id];
+    return pokemons[id-1];
 }
 
 function deletarPokemon(id){
     sequence._id = sequence._id - 1;
-    const pokemonDeletado = pokemons[id];
+    const pokemonDeletado = pokemons[id-1];
 
-    pokemons.splice(id, 1);
+    pokemons.splice(id-1, 1);
     pokemons.forEach(pokemon => {
-        if(pokemon.id > id){
+        if(pokemon.id > id && id != 1){
             pokemon.id = pokemon.id - 1;
         }
     });
