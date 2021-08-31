@@ -17,27 +17,27 @@ app.get('/pokemons/:id' , (req , res)=>{
 
 });
 app.post('/pokemons' , (req , res)=>{
-    let hp = Number(req.body.hp);
 
-    if(!isNaN(hp)){
-        const pokemon = dataBase.salvarPokemons({
-            nome: req.body.nome,
-            tipo: req.body.tipo,
-            hp: Number(req.body.hp)
-        });
-        if(pokemon.hp > 100){
-            pokemon.hp = 100;
-        }
-        res.send(pokemon);
-    }
-    else{
-        res.status(500).send('Digite um número válido!')
-    }
+    const pokemon = dataBase.salvarPokemons({
+        nome: req.body.nome,
+        tipo: req.body.tipo,
+        fraqueza: req.body.fraqueza,
+        resistencia: req.body.resistencia,
+        hp: 100
+    });
+    res.send(pokemon);
 });
-
 app.put('/pokemons/:id' , (req , res)=>{
 
-    res.send(dataBase.curarPokemon(Number(req.params.id)));
+    const pokemon = dataBase.atualizarPokemon(req.params.id, {
+        nome: req.body.nome,
+        tipo: req.body.tipo,
+        fraqueza: req.body.fraqueza,
+        resistencia: req.body.resistencia,
+        hp: 100,
+        id: Number(req.params.id)
+    });
+    res.send(pokemon);
  
  });
 
@@ -47,4 +47,15 @@ app.put('/pokemons/:id' , (req , res)=>{
  
  });
 
+ app.put('/pokemons/:id' , (req , res)=>{
+
+    res.send(dataBase.curarPokemon(Number(req.params.id)));
+ 
+ });
+ app.post('/batalha' , (req , res)=>{
+
+    res.send(dataBase.batalhaPokemon(req.body.id1, req.body.id2));
+ 
+ });
+ 
 app.listen(8000);
