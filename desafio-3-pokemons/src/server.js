@@ -1,24 +1,24 @@
-const express = require('express');
+   const express = require('express');
 const app = express();
-const dataBase = require('./dataBase');
+const dataBase = require('./database/dataBaseKnex');
 const bodyParser = require('body-parser');
 const { urlencoded } = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: true}))
 
-app.get('/pokemons' , (req , res)=>{
+app.get('/pokemons' , async (req , res)=>{
 
-   res.send(dataBase.mostrarPokemons());
-
-});
-app.get('/pokemons/:id' , (req , res)=>{
-
-   res.send(dataBase.mostrarPokemon(req.params.id));
+   res.send(await dataBase.mostrarPokemons());
 
 });
-app.post('/pokemons' , (req , res)=>{
+app.get('/pokemons/:id' , async (req , res)=>{
 
-    const pokemon = dataBase.salvarPokemons({
+   res.send(await dataBase.mostrarPokemon(req.params.id));
+
+});
+app.post('/pokemons' , async (req , res)=>{
+
+    const pokemon = await dataBase.salvarPokemons({
         nome: req.body.nome,
         tipo: req.body.tipo,
         fraqueza: req.body.fraqueza,
@@ -27,9 +27,9 @@ app.post('/pokemons' , (req , res)=>{
     });
     res.send(pokemon);
 });
-app.put('/pokemons/:id' , (req , res)=>{
+app.put('/pokemons/:id' , async (req , res)=>{
 
-    const pokemon = dataBase.atualizarPokemon(req.params.id, {
+    const pokemon = await dataBase.atualizarPokemon(req.params.id, {
         nome: req.body.nome,
         tipo: req.body.tipo,
         fraqueza: req.body.fraqueza,
@@ -41,9 +41,9 @@ app.put('/pokemons/:id' , (req , res)=>{
  
  });
 
- app.delete('/pokemons/:id' , (req , res)=>{
+ app.delete('/pokemons/:id' , async (req , res)=>{
 
-    res.send(dataBase.deletarPokemon(Number(req.params.id)));
+    res.send(await dataBase.deletarPokemon(Number(req.params.id)));
  
  });
 

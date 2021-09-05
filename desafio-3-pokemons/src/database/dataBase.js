@@ -49,8 +49,8 @@ function batalhaPokemon(id1, id2){
     const efetivo = 20;
     const naoEfetivo = 10;
 
-    const pokemon1 = pokemons[id1];
-    const pokemon2 = pokemons[id2];
+    const pokemon1 = pokemons[id1-1];
+    const pokemon2 = pokemons[id2-1];
 
     if(pokemon1.hp !== 0 && pokemon2.hp !== 0){
         if(pokemon1.tipo == pokemon2.fraqueza){
