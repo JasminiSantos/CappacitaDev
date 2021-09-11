@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+* {
+    padding:0;
+    margin:0;
+    vertical-align:baseline;
+    list-style:none;
+    outline: none;
+}
+body {
+    background: #9623d0;
+}
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 81px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: #FFFFFF;
+    border-radius: 12px;
+}
+#login-form {
+    padding: 38px 60px;
+}
+#email{
+    padding: 13.5px 0 13.5px 15px;
+    width: 300px;
+    margin-bottom: 32px;
+    border: 1px solid #4E4E4E;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+.input-eye {
+    padding: 13.5px 0 13.5px 15px;
+    display: flex;
+    position: relative;
+    margin-bottom: 20px;
+    border: 1px solid #4E4E4E;
+    box-sizing: border-box;
+    border-radius: 8px;   
+}
+#password { 
+    border: none;
+    width: 100%;
+}
+#eye {
+    margin-right: 15px;
+    cursor: pointer;
+}
+label {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    margin-bottom: 16px;
+}
+.email-section, .password-section {
+    display: flex;
+    flex-direction: column;
+}
+.enter-button{
+    text-align: center;
+}
+#entrar {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+    margin-top: 62px;
+    padding: 13px 36px;
+    background-color: #9623d0;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: ease-in-out;
+    transition-duration: 0.2s;
+}
+#entrar:hover{
+    background: #15D1AF;
+}
+
+input {
+    font-size: 18px;
+}
+.signup {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    text-decoration: none;
+    transition: ease-in-out;
+    transition-duration: 0.2s;
+}
+.signup:hover{
+    color: #15D1AF;   
+}

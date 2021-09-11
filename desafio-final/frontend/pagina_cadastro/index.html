@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro CappacitaFlix</title>
+</head>
+<body>
+    
+    <div class="container">
+        <form action="/cadastro" method="POST" id="login-form">
+            <h2>Cadastro</h2>
+
+            <div class="email-section">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+
+
+            <div class="password-section">
+                <label for="password">Senha</label>
+                <div class="input-eye">
+                    <input type="password" name="password" id="password" required>
+                    <img id="eye" src="./assets/olho-aberto.svg" alt="olho da senha aberto">
+                </div>
+            </div>
+
+            <a href="../pagina_login/index.html" class="signup">Login</a>
+
+            <div class="enter-button">
+                <button type="submit" id="entrar">Entrar</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
