@@ -10,8 +10,13 @@
 <body>
     
     <div class="container">
-        <form action="/cadastro" method="POST" id="login-form">
+        <form action="cadastro" method="POST" id="login-form">
             <h2>Cadastro</h2>
+            
+            <div class="username-section">
+                <label for="username">Usuário</label>
+                <input type="text" name="username" id="username" required>
+            </div>
 
             <div class="email-section">
                 <label for="email">E-mail</label>
@@ -27,10 +32,10 @@
                 </div>
             </div>
 
-            <a href="../pagina_login/index.html" class="signup">Login</a>
+            <a href="login" class="signup">Login</a>
 
             <div class="enter-button">
-                <button type="submit" id="entrar">Entrar</button>
+                <button type="submit" id="entrar">Criar conta</button>
             </div>
         </form>
     </div>
